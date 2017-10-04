@@ -1,0 +1,21 @@
+
+<%= form_for(@user, url: {action: "login"}) do |f| %>
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="medium-6 cell">
+        <label>Login
+          <%= f.text_field :username,  placeholder: "Enter username", autofocus: true %>
+        </label>
+      </div>
+      <div class="medium-6 cell">
+        <label>Password
+          <%= f.password_field :password,  placeholder: "Enter username", autofocus: true %>
+
+        </label>
+      </div>
+      <div class="medium-6 cell">
+        <button type="submit" class="alert button">Login</button>
+      </div>
+    </div>
+  </div>
+<% end%>
