@@ -12,8 +12,10 @@ class SessionController < ApplicationController
       flash[:success] = "You have successfully logged in"
       redirect_to user_path(user)
     else
-      flash.now[:danger] = "There was something wrong with your login information"
+      @user = User.new(email: params[:user][:email])
+      flash.now[:danger] = "Login incorrect"
       render 'login'
+    end
   end
 
   def logout
