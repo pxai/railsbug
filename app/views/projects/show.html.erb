@@ -10,5 +10,27 @@
   <%= @project.description %>
 </p>
 
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @project.bugs.each do |bug| %>
+      <tr>
+        <td><%= bug.name %></td>
+        <td><%= bug.description %></td>
+        <td><%= link_to 'Show', bug_path(bug) %></td>
+        <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+        <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

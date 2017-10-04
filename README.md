@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Further Reading
+[This is a must about M:N](http://jeffthomas.xyz/many-to-many-relationships-in-rails)

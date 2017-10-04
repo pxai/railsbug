@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :memberships
+  has_many :projects, through: :memberships
+  has_many :solvers
+  has_many :bugs, through: :solvers
 
   validates :username, presence: true,
             uniqueness: { case_sensitive: false },

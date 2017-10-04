@@ -1,4 +1,8 @@
 class Project < ApplicationRecord
+  has_many :memberships
+  has_many :users, through: :memberships
+  has_many :bugs
+
   validates :name, presence: true,
             uniqueness: { case_sensitive: false },
             length: { minimum: 3, maximum: 100 }
