@@ -37,6 +37,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'foundation-rails', '~> 6.4', '>= 6.4.1.2'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+# pagination
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'will_paginate-foundation', '~> 6.2', '>= 6.2.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

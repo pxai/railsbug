@@ -23,7 +23,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @projects, renderer: FoundationPagination::Rails %>
 <br>
 
 <%= link_to 'New Project', new_project_path %>

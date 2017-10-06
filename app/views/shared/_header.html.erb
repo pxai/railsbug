@@ -1,25 +1,19 @@
-<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle="example-menu"></button>
+<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
   <div class="title-bar-title">Menu</div>
 </div>
 
-<div class="top-bar" id="example-menu">
+<div class="top-bar" id="responsive-menu">
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Site Title</li>
-      <li class="has-submenu">
-        <%= link_to t('project.view'), projects_path %>
-        <ul class="submenu menu vertical" data-submenu>
-          <li><%= link_to t('project.view'), projects_path %>
-          </li>
-          <li><a href="#0">Two</a></li>
-          <li><a href="#0">Three</a></li>
-        </ul>
+      <li class="menu-text">
+        <%= link_to t('railsbug'), root_path %>
       </li>
+      <li><%= link_to t('project.view'), projects_path %></li>
       <% if logged_in? %>
-      <li><%= link_to t('project.create'), new_project_path %></li>
-      <li><%= link_to t('user.profile'), edit_profile_path %></li>
-      <li><%= link_to t('session.logout'), logout_path %></li>
+          <li><%= link_to t('project.create'), new_project_path %></li>
+          <li><%= link_to t('user.profile'), edit_profile_path %></li>
+          <li><%= link_to t('session.logout'), logout_path %></li>
       <% else %>
           <li><%= link_to t('user.signin'), login_path %></li>
           <li><%= link_to t('user.signup'), signup_path %></li>
