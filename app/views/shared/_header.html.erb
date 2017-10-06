@@ -21,6 +21,7 @@
       <li><%= link_to t('user.profile'), edit_profile_path %></li>
       <li><%= link_to t('session.logout'), logout_path %></li>
       <% else %>
+          <li><%= link_to t('user.signin'), login_path %></li>
           <li><%= link_to t('user.signup'), signup_path %></li>
       <% end %>
     </ul>

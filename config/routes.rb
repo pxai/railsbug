@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'edit_profile', to: 'users#edit_profile'
+
   get 'signup', to: 'users#signup_form'
   post 'signup', to: 'users#signup'
+  get 'profile', to: 'users#profile'
+  get 'edit_profile', to: 'users#edit_profile'
+  post 'edit_profile', to: 'users#save_profile'
 
   get 'login', to: 'session#login'
   post 'login', to: 'session#check_user'
