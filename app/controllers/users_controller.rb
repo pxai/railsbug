@@ -21,6 +21,12 @@ class UsersController < ApplicationController
   def edit
   end
 
+
+  def signup_form
+    @user = User.new
+    render 'signup'
+  end
+
   # POST /users
   # POST /users.json
   def create
