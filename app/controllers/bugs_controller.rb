@@ -29,10 +29,10 @@ class BugsController < ApplicationController
     respond_to do |format|
       if @bug.save
         format.html { redirect_to @bug, notice: 'Bug was successfully created.' }
-        format.json { render :show, status: :created, location: @bug }
+        #format.json { render :show, status: :created, location: @bug }
       else
         format.html { render :new }
-        format.json { render json: @bug.errors, status: :unprocessable_entity }
+        #format.json { render json: @bug.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +43,10 @@ class BugsController < ApplicationController
     respond_to do |format|
       if @bug.update(bug_params)
         format.html { redirect_to @bug, notice: 'Bug was successfully updated.' }
-        format.json { render :show, status: :ok, location: @bug }
+        #format.json { render :show, status: :ok, location: @bug }
       else
         format.html { render :edit }
-        format.json { render json: @bug.errors, status: :unprocessable_entity }
+       # format.json { render json: @bug.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +57,7 @@ class BugsController < ApplicationController
     @bug.destroy
     respond_to do |format|
       format.html { redirect_to bugs_url, notice: 'Bug was successfully destroyed.' }
-      format.json { head :no_content }
+      #format.json { head :no_content }
     end
   end
 
@@ -69,6 +69,6 @@ class BugsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bug_params
-      params.require(:bug).permit(:name, :description, :solution)
+      params.require(:bug).permit(:name, :description, :solution, :project_id)
     end
 end

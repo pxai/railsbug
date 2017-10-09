@@ -2,7 +2,11 @@ require 'test_helper'
 
 class BugsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @bug = bugs(:one)
+    #@bug = bugs(:one)
+    @bug = Bug.create(name: "Superbug",
+                      description: "Superdescription",
+                      solution:"No solution",
+                      project: Project.first())
   end
 
   test "should get index" do
@@ -17,7 +21,10 @@ class BugsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create bug" do
     assert_difference('Bug.count') do
-      post bugs_url, params: { bug: { description: @bug.description, name: @bug.name, solution: @bug.solution } }
+      post bugs_url, params: { bug: { description: @bug.description,
+                                      name: @bug.name,
+                                      solution: @bug.solution,
+                                      project_id:@bug.project.id } }
     end
 
     assert_redirected_to bug_url(Bug.last)
@@ -34,7 +41,9 @@ class BugsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update bug" do
-    patch bug_url(@bug), params: { bug: { description: @bug.description, name: @bug.name, solution: @bug.solution } }
+    patch bug_url(@bug), params: { bug: { description: @bug.description,
+                                          name: @bug.name,
+                                          solution: @bug.solution } }
     assert_redirected_to bug_url(@bug)
   end
 
